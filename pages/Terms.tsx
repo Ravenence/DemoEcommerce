@@ -15,7 +15,7 @@ const Terms = () => {
           <section>
             <h2 className="text-[24px] font-semibold mb-4 mt-8">1. Acceptance of Terms</h2>
             <p className="text-gray-700">
-              By accessing and using the Harris Vale website, you accept and agree to be bound by the terms and 
+              By accessing and using the UK Ecommerce website, you accept and agree to be bound by the terms and 
               provision of this agreement. If you do not agree to these terms, please do not use our website.
             </p>
           </section>
@@ -23,7 +23,7 @@ const Terms = () => {
           <section>
             <h2 className="text-[24px] font-semibold mb-4 mt-8">2. Use License</h2>
             <p className="text-gray-700 mb-4">
-              Permission is granted to temporarily download one copy of the materials on Harris Vale's website for 
+              Permission is granted to temporarily download one copy of the materials on UK Ecommerce's website for 
               personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title.
             </p>
             <p className="text-gray-700">Under this license you may not:</p>
@@ -71,7 +71,7 @@ const Terms = () => {
           <section>
             <h2 className="text-[24px] font-semibold mb-4 mt-8">7. Limitation of Liability</h2>
             <p className="text-gray-700">
-              Harris Vale shall not be liable for any damages arising from the use or inability to use our website 
+              UK Ecommerce shall not be liable for any damages arising from the use or inability to use our website 
               or products, even if we have been notified of the possibility of such damages.
             </p>
           </section>
