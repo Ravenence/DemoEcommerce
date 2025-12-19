@@ -131,22 +131,6 @@ const ProductDetail = () => {
                </div>
              )}
 
-             {product.category === 'Phones' && (
-               <div className="flex items-center gap-4 mb-8 flex-wrap">
-                  <span className="text-[20px] font-normal">Model:</span>
-                  {['iPhone SE', 'iPhone 15', 'iPhone 15 Pro', 'iPhone 15 Pro Max'].map((s) => (
-                     <button 
-                       key={s} 
-                       onClick={() => setSelectedSize(s)}
-                       className={`px-3 py-2 text-sm border rounded-[4px] hover:bg-primary hover:text-white hover:border-primary transition font-medium ${
-                         selectedSize === s ? 'bg-primary text-white border-primary' : 'border-gray-300'
-                       }`}
-                     >
-                        {s}
-                     </button>
-                  ))}
-               </div>
-             )}
              {product.category === 'Vapes' && (
                <div className="flex items-center gap-4 mb-8 flex-wrap">
                   <span className="text-[20px] font-normal">Size:</span>
