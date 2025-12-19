@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 export const AuthLayout = () => {
   const location = useLocation();
   const isLogin = location.pathname === '/login';
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
 
   return (
     <div className="container mx-auto max-w-[1305px] py-14 flex flex-col md:flex-row items-center gap-10 lg:gap-32 mb-10">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { Star, Truck, RefreshCcw, Heart, Minus, Plus } from 'lucide-react';
 import { ProductCard } from '../components/ProductCard';
@@ -13,9 +13,14 @@ const ProductDetail = () => {
   const product = ALL_PRODUCTS.find(p => p.id === Number(id));
   
   const [quantity, setQuantity] = useState(1);
-  const [selectedSize, setSelectedSize] = useState('M');
+  const [selectedSize, setSelectedSize] = useState(product?.category === 'Phones' ? 'iPhone 15' : 'M');
   const [selectedColor, setSelectedColor] = useState(0);
   const [showNotification, setShowNotification] = useState(false);
+
+  // Scroll to top when component mounts or when product changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [id]);
 
   if (!product) {
     return (
@@ -99,9 +104,9 @@ const ProductDetail = () => {
                 <span className="text-gray-400">|</span>
                 <span className="text-[#00FF66] text-[14px]">In Stock</span>
              </div>
-             <div className="text-2xl font-normal mb-2 font-inter text-primary">${product.price}</div>
+             <div className="text-2xl font-normal mb-2 font-inter text-primary">£{product.price}</div>
              {product.originalPrice && (
-               <div className="text-lg text-gray-500 line-through mb-4">${product.originalPrice}</div>
+               <div className="text-lg text-gray-500 line-through mb-4">£{product.originalPrice}</div>
              )}
              <p className="text-[14px] text-black leading-normal mb-8 border-b border-black/50 pb-6 md:pb-10 font-poppins">
                 {product.category === 'Phones' && 'Premium smartphone with cutting-edge features, stunning display, and powerful performance for all your needs.'}
@@ -126,7 +131,23 @@ const ProductDetail = () => {
                </div>
              )}
 
-             {(product.category === 'Phones' || product.category === 'Electronics') && (
+             {product.category === 'Phones' && (
+               <div className="flex items-center gap-4 mb-8 flex-wrap">
+                  <span className="text-[20px] font-normal">Model:</span>
+                  {['iPhone SE', 'iPhone 15', 'iPhone 15 Pro', 'iPhone 15 Pro Max'].map((s) => (
+                     <button 
+                       key={s} 
+                       onClick={() => setSelectedSize(s)}
+                       className={`px-3 py-2 text-sm border rounded-[4px] hover:bg-primary hover:text-white hover:border-primary transition font-medium ${
+                         selectedSize === s ? 'bg-primary text-white border-primary' : 'border-gray-300'
+                       }`}
+                     >
+                        {s}
+                     </button>
+                  ))}
+               </div>
+             )}
+             {product.category === 'Vapes' && (
                <div className="flex items-center gap-4 mb-8 flex-wrap">
                   <span className="text-[20px] font-normal">Size:</span>
                   {['XS', 'S', 'M', 'L', 'XL'].map((s) => (

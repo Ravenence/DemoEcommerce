@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { ALL_PRODUCTS } from '../constants';
@@ -18,6 +18,10 @@ const SUB_CATEGORY_MAP: Record<string, { display: string }> = {
 
 const ElectronicsSubCategory = () => {
   const { subcategory } = useParams<{ subcategory: string }>();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [subcategory]);
 
   const subCategoryInfo = subcategory ? SUB_CATEGORY_MAP[subcategory] : null;
   

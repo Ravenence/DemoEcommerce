@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { ProductCard } from '../components/ProductCard';
 import { ALL_PRODUCTS } from '../constants';
@@ -9,6 +9,10 @@ const Products = () => {
   const categoryParam = searchParams.get('category');
   const [selectedCategory, setSelectedCategory] = useState<string>(categoryParam || 'All');
   const [sortBy, setSortBy] = useState<string>('featured');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const categories = [
     { name: 'All', icon: Filter },

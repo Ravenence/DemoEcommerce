@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Store, DollarSign, ShoppingBag, Wallet, Twitter, Instagram, Linkedin } from 'lucide-react';
 import { TEAM } from '../constants';
 import { Truck, Headset, CheckCircle } from 'lucide-react';
 
 const About = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="container mx-auto max-w-[1170px] px-4 py-20">
        <div className="text-[14px] text-gray-500 mb-12">
@@ -70,7 +74,7 @@ const About = () => {
                <Truck size={28} />
             </div>
             <h3 className="font-bold uppercase text-[20px] mb-2">FREE AND FAST DELIVERY</h3>
-            <p className="text-[14px] text-black">Free delivery for all orders over $140</p>
+            <p className="text-[14px] text-black">Free delivery for all orders over £140</p>
          </div>
          <div className="flex flex-col items-center">
             <div className="bg-black border-[10px] border-[#C1C1C1]/30 rounded-full w-20 h-20 flex items-center justify-center text-white mb-6">

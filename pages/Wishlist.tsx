@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ProductCard } from '../components/ProductCard';
 import { BEST_SELLING } from '../constants';
 import { useCart } from '../context/CartContext';
@@ -6,6 +6,10 @@ import { Link } from 'react-router-dom';
 
 const Wishlist = () => {
   const { wishlistItems, addToCart } = useCart();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const handleMoveAllToBag = () => {
     wishlistItems.forEach(item => addToCart(item));

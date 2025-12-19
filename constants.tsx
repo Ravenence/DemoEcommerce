@@ -176,7 +176,7 @@ export const ALL_PRODUCTS: Product[] = [
 ];
 
 export const TEAM: TeamMember[] = [
-  { id: 1, name: 'Tom Cruise', role: 'Founder & Chairman', image: 'https://images.pexels.com/photos/1005/pexels-photo-1005.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' },
-  { id: 2, name: 'Emma Watson', role: 'Managing Director', image: 'https://images.pexels.com/photos/1011/pexels-photo-1011.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' },
-  { id: 3, name: 'Will Smith', role: 'Product Designer', image: 'https://images.pexels.com/photos/1012/pexels-photo-1012.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' },
+  { id: 1, name: 'Tom Cruise', role: 'Founder & Chairman', image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' },
+  { id: 2, name: 'Emma Watson', role: 'Managing Director', image: 'https://images.pexels.com/photos/3756679/pexels-photo-3756679.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' },
+  { id: 3, name: 'Will Smith', role: 'Product Designer', image: 'https://images.pexels.com/photos/2182970/pexels-photo-2182970.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2' },
 ];

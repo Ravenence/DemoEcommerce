@@ -36,6 +36,10 @@ const PhonesCategory = () => {
   ];
 
   useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
+  useEffect(() => {
     const interval = setInterval(() => {
       setCurrentVideo((prev) => (prev + 1) % videos.length);
     }, 8000);

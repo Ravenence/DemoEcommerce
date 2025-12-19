@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail } from 'lucide-react';
 
 const Contact = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="container mx-auto max-w-[1170px] px-4 py-20">
        <div className="text-[14px] text-gray-500 mb-20">
