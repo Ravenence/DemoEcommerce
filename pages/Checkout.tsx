@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 
@@ -11,6 +11,10 @@ const InputGroup = ({ label, required = false }: { label: string, required?: boo
 
 const Checkout = () => {
   const { cartItems, getTotalPrice } = useCart();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <div className="container mx-auto max-w-[1170px] px-4 sm:px-6 lg:px-4 py-8 sm:py-12 lg:py-20">
@@ -45,7 +49,7 @@ const Checkout = () => {
                         <img src={item.image} alt={item.name} className="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0" />
                         <span className="text-[13px] sm:text-[15px] lg:text-[16px] truncate">{item.name} x {item.quantity}</span>
                      </div>
-                     <span className="text-[13px] sm:text-[15px] lg:text-[16px] font-medium flex-shrink-0">${(item.price * item.quantity).toFixed(2)}</span>
+                     <span className="text-[13px] sm:text-[15px] lg:text-[16px] font-medium flex-shrink-0">£{(item.price * item.quantity).toFixed(2)}</span>
                   </div>
                 ))}
              </div>
@@ -53,7 +57,7 @@ const Checkout = () => {
              <div className="space-y-3 sm:space-y-4 border-b border-gray-300 pb-6 sm:pb-8 mb-6 sm:mb-8">
                 <div className="flex justify-between text-[14px] sm:text-[15px] lg:text-[16px]">
                    <span>Subtotal:</span>
-                   <span>${getTotalPrice().toFixed(2)}</span>
+                   <span>£{getTotalPrice().toFixed(2)}</span>
                 </div>
                 <div className="flex justify-between text-[14px] sm:text-[15px] lg:text-[16px]">
                    <span>Shipping:</span>
@@ -61,7 +65,7 @@ const Checkout = () => {
                 </div>
                 <div className="flex justify-between text-[14px] sm:text-[15px] lg:text-[16px] font-medium">
                    <span>Total:</span>
-                   <span>${getTotalPrice().toFixed(2)}</span>
+                   <span>£{getTotalPrice().toFixed(2)}</span>
                 </div>
              </div>
 

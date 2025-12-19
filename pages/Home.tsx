@@ -403,7 +403,7 @@ const Home = () => {
                <Truck size={28} />
             </div>
             <h3 className="font-bold uppercase text-[20px] mb-2 font-inter">FREE AND FAST DELIVERY</h3>
-            <p className="text-[14px] text-black font-poppins">Free delivery for all orders over $140</p>
+            <p className="text-[14px] text-black font-poppins">Free delivery for all orders over £140</p>
          </div>
          <div className="flex flex-col items-center">
             <div className="bg-black border-[10px] border-[#C1C1C1]/30 rounded-full w-20 h-20 flex items-center justify-center text-white mb-6">

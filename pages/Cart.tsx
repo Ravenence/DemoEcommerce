@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { X, ChevronUp, ChevronDown } from 'lucide-react';
 import { useCart } from '../context/CartContext';
@@ -7,6 +7,10 @@ const Cart = () => {
   const navigate = useNavigate();
   const { cartItems, removeFromCart, updateQuantity, getTotalPrice, clearCart } = useCart();
   const [couponCode, setCouponCode] = useState('');
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (cartItems.length === 0) {
     return (
@@ -55,7 +59,7 @@ const Cart = () => {
                 </div>
                 <div className="flex justify-between md:block">
                   <span className="md:hidden font-medium">Price:</span>
-                  <span className="text-center text-[14px] md:text-[16px] md:block">${item.price}</span>
+                  <span className="text-center text-[14px] md:text-[16px] md:block">£{item.price}</span>
                 </div>
                 <div className="flex justify-between md:justify-center items-center">
                     <span className="md:hidden font-medium">Quantity:</span>
@@ -73,7 +77,7 @@ const Cart = () => {
                 </div>
                 <div className="flex justify-between md:block">
                   <span className="md:hidden font-medium">Subtotal:</span>
-                  <span className="text-right text-[14px] md:text-[16px] font-medium md:block">${(item.price * item.quantity).toFixed(2)}</span>
+                  <span className="text-right text-[14px] md:text-[16px] font-medium md:block">£{(item.price * item.quantity).toFixed(2)}</span>
                 </div>
              </div>
           ))}
@@ -81,19 +85,16 @@ const Cart = () => {
 
        <div className="flex flex-col md:flex-row justify-between mb-20 gap-4">
           <Link to="/" className="border border-black/50 px-8 md:px-12 py-4 rounded-[4px] font-medium hover:bg-gray-50 text-[16px] text-center">Return To Shop</Link>
-          <div className="flex gap-4">
-            <button 
-              onClick={() => {
-                if (window.confirm('Are you sure you want to clear your cart?')) {
-                  clearCart();
-                }
-              }}
-              className="border border-red-500 text-red-500 px-8 md:px-12 py-4 rounded-[4px] font-medium hover:bg-red-50 text-[16px]"
-            >
-              Clear Cart
-            </button>
-            <button className="border border-black/50 px-8 md:px-12 py-4 rounded-[4px] font-medium hover:bg-gray-50 text-[16px]">Update Cart</button>
-          </div>
+          <button 
+            onClick={() => {
+              if (window.confirm('Are you sure you want to clear your cart?')) {
+                clearCart();
+              }
+            }}
+            className="border border-red-500 text-red-500 px-8 md:px-12 py-4 rounded-[4px] font-medium hover:bg-red-50 text-[16px]"
+          >
+            Clear Cart
+          </button>
        </div>
 
        <div className="flex flex-col lg:flex-row justify-between gap-10 items-start">
@@ -112,7 +113,7 @@ const Cart = () => {
              <h3 className="font-medium text-[20px] mb-6">Cart Total</h3>
              <div className="flex justify-between border-b border-gray-300 pb-4 mb-4 text-[16px]">
                 <span>Subtotal:</span>
-                <span>${getTotalPrice().toFixed(2)}</span>
+                <span>£{getTotalPrice().toFixed(2)}</span>
              </div>
              <div className="flex justify-between border-b border-gray-300 pb-4 mb-4 text-[16px]">
                 <span>Shipping:</span>
@@ -120,7 +121,7 @@ const Cart = () => {
              </div>
              <div className="flex justify-between mb-8 text-[16px] font-medium">
                 <span>Total:</span>
-                <span>${getTotalPrice().toFixed(2)}</span>
+                <span>£{getTotalPrice().toFixed(2)}</span>
              </div>
              <div className="flex justify-center">
                 <button 

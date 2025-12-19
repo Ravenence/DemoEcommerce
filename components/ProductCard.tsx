@@ -111,9 +111,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product, isWishlist = 
       <div>
         <h3 className="font-medium text-[16px] truncate text-black mb-2 font-poppins">{product.name}</h3>
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-primary font-medium text-[16px] font-poppins">${product.price}</span>
+          <span className="text-primary font-medium text-[16px] font-poppins">£{product.price}</span>
           {product.originalPrice && (
-            <span className="text-gray-500 line-through text-[16px] font-medium opacity-50 font-poppins">${product.originalPrice}</span>
+            <span className="text-gray-500 line-through text-[16px] font-medium opacity-50 font-poppins">£{product.originalPrice}</span>
           )}
         </div>
         {!isWishlist && (
