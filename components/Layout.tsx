@@ -30,7 +30,7 @@ const Header = () => {
       {/* Navbar */}
       <nav className="border-b pt-6 pb-4 bg-white sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-4 max-w-[1170px] flex justify-between items-center">
-          <Link to="/" className="text-xl sm:text-2xl font-bold tracking-[0.03em] font-inter">HARRIS VALE</Link>
+          <Link to="/" className="text-xl sm:text-2xl font-bold tracking-[0.03em] font-inter">UK ECOMMERCE</Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-8 lg:gap-12 text-black text-[16px]">
